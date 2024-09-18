@@ -11,7 +11,7 @@ body {
 .tamagotchies-wrapper {
     display: flex;
     position: absolute;
-    bottom: 20px;
+    bottom: 35px;
     justify-content: center;
     width: 100%;
 }
@@ -79,7 +79,9 @@ body {
 
 .health,
 .mental,
-.exhaustion {
+.exhaustion,
+.hapiness,
+.hunger {
     position: absolute;
     top: 0;
     transition: 0.5s;
@@ -109,6 +111,20 @@ body {
     background-color: rgb(129, 129, 182);
 }
 
+.hapiness-bar {
+    background-color: rgb(194, 194, 84);
+}
+.hapiness {
+    background-color: rgb(190, 190, 126);
+}
+
+.hunger-bar {
+    background-color: rgb(194, 84, 194);
+}
+.hunger {
+    background-color: rgb(190, 126, 190);
+}
+
 .main-tamagotchi {
     width: 20%;
 }
@@ -119,6 +135,38 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    height: 30px;
+    width: 120px;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.sliders:last-child {
+    border-bottom: 2px solid black;
+}
+
+.sliders:hover,
+.button:hover {
+    color: white;
+    border: 2px solid white;
+    background-color: black;
 }
 
 .button {
@@ -130,14 +178,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     transition: 0.5s ease-out;
-}
-
-.button:hover {
-    color: white;
-    border: 2px solid white;
-    background-color: black;
 }
 
 .hidden {
