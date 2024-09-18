@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    background-image: url("../images/background.avif");
+    font-family: "Pixelify Sans", sans-serif;
+    -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}
+
+.tamagotchies-wrapper {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.tamagotchies {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.7s;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.warrior {
+    width: 80%;
+}
+
+.main-game-wrapper {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.bars {
+    width: 300px;
+}
+
+.bar-wrapper {
+    border: 2px solid black;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0 2px,2px 2px,2px 0,calc(100% - 2px) 0,calc(100% - 2px) 2px,100% 2px,100% calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) 100%,2px 100%,2px calc(100% - 2px),0 calc(100% - 2px));
+    margin-bottom: 10px;
+    transition: 0.5s;
+    cursor: default;
+    position: relative;
+}
+
+.bar-wrapper p {
+    position: absolute;
+    z-index: 999;
+    left: 20px;
+}
+
+.bar:hover {
+    filter: brightness(70%);
+
+}
+
+.bar p {
+    font-size: 15px;
+    margin-left: 12px;
+}
+
+.bar {
+    width: 300px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.health,
+.mental,
+.exhaustion {
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+    height: 40px;
+    width: 300px;
+    z-index: -1;
+}
+
+.health-bar {
+    background-color: rgb(194, 88, 88);
+}
+.health {
+    background-color: rgb(182, 129, 129);
+}
+
+.mental-health {
+    background-color: rgb(88, 194, 88);
+}
+.mental {
+    background-color: rgb(129, 182, 129);
+}
+
+.exhaustion-bar {
+    background-color: rgb(88, 88, 194);
+}
+.exhaustion {
+    background-color: rgb(129, 129, 182);
+}
+
+.main-tamagotchi {
+    width: 20%;
+}
+
+.buttons {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 2px solid black;
+    clip-path: polygon(0 2px,2px 2px,2px 0,calc(100% - 2px) 0,calc(100% - 2px) 2px,100% 2px,100% calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) 100%,2px 100%,2px calc(100% - 2px),0 calc(100% - 2px));
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+
+.button:hover {
+    color: white;
+    border: 2px solid white;
+    background-color: black;
+}
+
+.hidden {
+    display: none;
+}
