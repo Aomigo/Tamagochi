@@ -1,5 +1,6 @@
 const selectionWrapper = document.querySelector('.tamagotchies-wrapper')
 const MainGameWrapper = document.querySelector('.main-game-wrapper')
+const ActionsTaken = document.querySelector('.text-about-actions')
 const Warrior = document.querySelector('.warrior')
 
 const healthBar = document.querySelector('.health-bar')
@@ -17,6 +18,9 @@ const Buttons = document.querySelectorAll('.button')
 const SliderAdventure = document.querySelector('.slider-adventure')
 const SliderFood = document.querySelector('.slider-food')
 const SliderActivities = document.querySelector('.slider-activities')
+const SubSliderAdventure = document.querySelectorAll('.sub-sliders-adventure')
+const SubSliderFood = document.querySelectorAll('.sub-sliders-food')
+const SubSliderActivities = document.querySelectorAll('.sub-sliders-activities')
 let frameTransitorWarrior = 0
 let animation = false;
 let deathAnimation = false;
@@ -34,6 +38,8 @@ let warriorCrouch = ["../assets/images/warrior/Crouch/Warrior_Crouch_1.png", "..
 let warriorDeath = ["../assets/images/warrior/Death/Warrior_Death_1.png", "../assets/images/warrior/Death/Warrior_Death_2.png", "../assets/images/warrior/Death/Warrior_Death_3.png", "../assets/images/warrior/Death/Warrior_Death_4.png", "../assets/images/warrior/Death/Warrior_Death_5.png", "../assets/images/warrior/Death/Warrior_Death_6.png", "../assets/images/warrior/Death/Warrior_Death_7.png", "../assets/images/warrior/Death/Warrior_Death_8.png", "../assets/images/warrior/Death/Warrior_Death_9.png", "../assets/images/warrior/Death/Warrior_Death_10.png", "../assets/images/warrior/Death/Warrior_Death_11.png"]
 
 function tamagochi(like, dislike, tName) {
+    this.yummy = like
+    this.dislike = dislike
     this.name = tName
     console.log(this.name)
 }
@@ -111,7 +117,7 @@ function Decay() {
         function DmgHealth() {
             healthWrapper.style.width = TotalHealth + "%"
         }
-        if(TotalHealth == 0) {
+        if (TotalHealth == 0) {
             deathAnimation = true
             let deathPattern = 0
             deathWarrior()
@@ -119,7 +125,7 @@ function Decay() {
             function deathWarrior() {
                 setTimeout(() => {
                     deathTiming()
-                }, 50)
+                }, 75)
             }
 
             function deathTiming() {
@@ -127,11 +133,11 @@ function Decay() {
                 if (deathPattern == 11) {
                     deathPattern = 0
                     deathanimation = false
-                    return 
+                    return
                 }
                 Warrior.src = warriorDeath[deathPattern]
                 deathWarrior()
-            }   
+            }
         }
         timeoutHealth()
     }
@@ -160,7 +166,7 @@ function Decay() {
         }, 10000)
     }
     function DmgTickExhaustion() {
-        TotalExhaustion -= 3
+        TotalExhaustion -= 2
         ExhaustionBar.style.width = TotalExhaustion + "%"
         setTimeout(() => {
             DmgExhaustion()
@@ -175,7 +181,7 @@ function Decay() {
     function timeoutHapiness() {
         setTimeout(() => {
             DmgTickHapiness()
-        }, 7000)
+        }, 5000)
     }
     function DmgTickHapiness() {
         TotalHapiness -= 1
@@ -193,7 +199,7 @@ function Decay() {
     function timeoutHunger() {
         setTimeout(() => {
             DmgTickHunger()
-        }, 2000)
+        }, 3000)
     }
     function DmgTickHunger() {
         TotalHunger -= 0.5
@@ -247,6 +253,165 @@ Buttons.forEach((button) => {
                 SliderActivities.classList.add('hidden')
             }
 
+        }
+    })
+})
+
+SubSliderAdventure.forEach((button) => {
+    button.addEventListener('click', function () {
+
+    })
+})
+
+SubSliderFood.forEach((button) => {
+    button.addEventListener('click', function () {
+        if (button.textContent.includes(Diana.dislike)) {
+            //Disliked part
+            TotalHunger -= 5
+
+            HungerBar.style.width = TotalHunger + "%"
+            setTimeout(() => {
+                Dmg()
+            }, 700)
+
+            function Dmg() {
+                hungerWrapper.style.width = TotalHunger + "%"
+            }
+
+            //malus happiness
+            TotalHapiness -= 3
+
+            HapinessBar.style.width = TotalHapiness + "%"
+            setTimeout(() => {
+                dmgHapiness()
+            }, 700)
+
+            function dmgHapiness() {
+                hapinessWrapper.style.width = TotalHapiness + "%"
+            }
+
+            ActionsTaken.classList.remove('hidden')
+            ActionsTaken.innerHTML = Diana.name + " hates " + Diana.dislike
+            setTimeout(() => {
+                ActionsTaken.classList.add('hidden')
+            }, 3000)
+
+        } else if (button.textContent.includes(Diana.yummy)) {
+            //Liked part
+            TotalHunger += 15
+            if (TotalHunger > 100) {
+                TotalHunger = 100
+            }
+
+            hungerWrapper.style.width = TotalHunger + "%"
+            setTimeout(() => {
+                Heal()
+            }, 500)
+
+            function Heal() {
+                HungerBar.style.width = TotalHunger + "%"
+            }
+
+            //bonus healing
+            TotalHealth += 7.5
+            if (TotalHealth > 100) {
+                TotalHealth = 100
+            }
+
+            healthWrapper.style.width = TotalHealth + "%"
+            setTimeout(() => {
+                HealthHeal()
+            }, 500)
+
+            function HealthHeal() {
+                healthBar.style.width = TotalHealth + "%"
+            }
+
+            //bonus happiness
+            TotalHapiness += 10
+            if (TotalHapiness > 100) {
+                TotalHapiness = 100
+            }
+
+            hapinessWrapper.style.width = TotalHapiness + "%"
+            setTimeout(() => {
+                HealHapiness()
+            }, 500)
+
+            function HealHapiness() {
+                HapinessBar.style.width = TotalHapiness + "%"
+            }
+
+            ActionsTaken.classList.remove('hidden')
+            ActionsTaken.innerHTML = Diana.name + " loved " + Diana.yummy
+            setTimeout(() => {
+                ActionsTaken.classList.add('hidden')
+            }, 3000)
+
+        } else {
+            //Normal part
+            TotalHunger += 5
+            if (TotalHunger > 100) {
+                TotalHunger = 100
+            }
+
+            hungerWrapper.style.width = TotalHunger + "%"
+            setTimeout(() => {
+                Heal()
+            }, 500)
+
+            function Heal() {
+                HungerBar.style.width = TotalHunger + "%"
+            }
+
+            //bonus healing
+            TotalHealth += 5
+            if (TotalHealth > 100) {
+                TotalHealth = 100
+            }
+
+            healthWrapper.style.width = TotalHealth + "%"
+            setTimeout(() => {
+                HealthHeal()
+            }, 500)
+
+            function HealthHeal() {
+                healthBar.style.width = TotalHealth + "%"
+            }
+
+            ActionsTaken.classList.remove('hidden')
+            ActionsTaken.innerHTML = Diana.name + " felt okay eating " + button.textContent
+            setTimeout(() => {
+                ActionsTaken.classList.add('hidden')
+            }, 3000)
+        }
+    })
+})
+
+SubSliderActivities.forEach((button) => {
+    button.addEventListener('click', function () {
+        if(button.textContent.includes("Wash")) {
+            //exhaustion +-
+            //mental health +
+            //health +-
+        }
+
+        if(button.textContent.includes("Train")) {
+            //exhaustion -
+            //happiness ++
+            //hunger -
+        }
+
+        if(button.textContent.includes("Rest")) {
+            //exhaustion ++
+            //happiness +
+            //hunger -+
+        }
+
+        if(button.textContent.includes("Meditate")) {
+            //mental health ++
+            //exhaustion -
+            //hunger -
         }
     })
 })
