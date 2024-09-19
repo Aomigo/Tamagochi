@@ -11,7 +11,7 @@ body {
 .tamagotchies-wrapper {
     display: flex;
     position: absolute;
-    bottom: 35px;
+    bottom: 110px;
     justify-content: center;
     width: 100%;
 }
@@ -30,6 +30,19 @@ body {
 
 .warrior {
     width: 80%;
+}
+
+.text-about-actions-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.text-about-actions {
+    position: absolute;
+    top: 300px;
 }
 
 .main-game-wrapper {
@@ -61,7 +74,7 @@ body {
     left: 20px;
 }
 
-.bar:hover {
+.bar-wrapper:hover {
     filter: brightness(70%);
 
 }
