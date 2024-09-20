@@ -8,3 +8,5 @@ This game is far from finished, here are the things i want to add :
 - Easter eggs,
 - More interactions with the character,
 - And finally, add multiple character.
+
+Check the results without cloning here -> https://Aomigo.github.io
