@@ -159,10 +159,10 @@ function Running() {
             runAnimation = false
             Warrior.classList.remove('running')
             if (Warrior.classList.contains('night-time')) {
-                body.style.backgroundImage = "url('../assets/images/background.png')"
+                body.style.backgroundImage = "url('./assets/images/background.png')"
                 Warrior.classList.remove('night-time')
             } else {
-                body.style.backgroundImage = "url('../assets/images/background-reverse.png')"
+                body.style.backgroundImage = "url('./assets/images/background-reverse.png')"
                 Warrior.classList.add('night-time')
             }
 
