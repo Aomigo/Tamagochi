@@ -148,13 +148,36 @@ body {
     width: 20%;
 }
 
-.loot-scroller-btn {
+.loot-scroller-wrapper {
     display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
     position: absolute;
     top: 0;
     right: 30px;
-    
+    width: 400px;
+}
+
+.loot-scroller-btn {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-top: 0;
+}
+
+.loot-scroller {
+    position: relative;
+    border: 2px solid black;
+    clip-path: polygon(0 2px, 2px 2px, 2px 0, calc(100% - 2px) 0, calc(100% - 2px) 2px, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 2px calc(100% - 2px), 0 calc(100% - 2px));
+    width: 170px;
+}
+
+.looting-results {
+    text-align: center;
 }
 
 .buttons {
@@ -225,6 +248,14 @@ body {
     animation: transition 6s ease-in-out;
 }
 
+.appear {
+    animation: appearance 0.5s ease;
+}
+
+.dissapear {
+    animation: dissapearance 0.5s ease;
+}
+
 @keyframes RunToAdventure {
     0% {
         margin-left: 0px;
@@ -246,5 +277,25 @@ body {
 
     100% {
         filter: brightness(100%);
+    }
+}
+
+@keyframes appearance {
+    0% {
+        top: -100px;
+    }
+
+    100% {
+        top: 1px;
+    }
+}
+
+@keyframes dissapearance {
+    0% {
+        top: 1px;
+    }
+
+    100% {
+        top: -100px;
     }
 }
