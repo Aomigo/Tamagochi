@@ -4,6 +4,9 @@ const selectionWrapper = document.querySelector('.tamagotchies-wrapper')
 const MainGameWrapper = document.querySelector('.main-game-wrapper')
 const Warrior = document.querySelector('.warrior')
 
+const LootScrollerResults = document.querySelector('.looting-results')
+const LootScroller = document.querySelector('.loot-scroller')
+const LootscrollerButton = document.querySelector('.loot-scroller-btn')
 const healthBar = document.querySelector('.health-bar')
 const healthWrapper = document.querySelector('.health')
 const MentalBar = document.querySelector('.mental-health')
@@ -36,7 +39,7 @@ let frameTransitorWarrior = 0
 IdleWarrior()
 Decay()
 
-//FAIRE UN RESUME DU LOOT AVEC FLECHE EN HAUT A GAUCHE QUI DEVOILE UN PARCHEMIN EN PIXLE
+//FAIRE UN RESUME DU LOOT AVEC FLECHE EN HAUT A GAUCHE QUI DEVOILE UN PARCHEMIN EN PIXEL
 
 function tamagochi(like, yuk, tName) {
     if (like === yuk) {
@@ -270,7 +273,7 @@ function Decay() {
     }
     function DmgTickHapiness() {
         TotalHapiness -= 1
-        if (TotalHapiness < 0) TotalHealth = 0
+        if (TotalHapiness < 0) TotalHapiness = 0
         HapinessBar.style.width = TotalHapiness + "%"
         setTimeout(() => {
             DmgHapiness()
