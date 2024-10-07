@@ -4,8 +4,8 @@ It is pretty straightforward :
 - You can travel, do dungeons, eat and make your character exercise.
 
 This game is far from finished, here are the things i want to add :
-- A loot system (WIP),
-- Easter eggs,
+- A loot system (Done),
+- Easter eggs (WIP),
 - More interactions with the character,
 - And finally, add multiple character.
 
