@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/heart.png">
+</head>
+
+<body>
+    <div class="everything">Hello and welcome to my tamagotchi</div>
+        <div class="text-about-actions-wrapper">
+            <p class="text-about-actions"></p>
+        </div>
+        <div class="main-game-wrapper">
+            <div class="bars">
+                <div class="bar-wrapper">
+                    <p>Health</p>
+                    <div class="health"></div>
+                    <div class="health-bar bar">
+
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <p>Mental Health</p>
+                    <div class="mental"></div>
+                    <div class="mental-health bar">
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <p>Exhaustion</p>
+                    <div class="exhaustion"></div>
+                    <div class="exhaustion-bar bar">
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <p>Hapiness</p>
+                    <div class="hapiness"></div>
+                    <div class="hapiness-bar bar">
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <p>Hunger</p>
+                    <div class="hunger"></div>
+                    <div class="hunger-bar bar">
+                    </div>
+                </div>
+            </div>
+            <div class="loot-scroller-wrapper">
+                <div class="loot-scroller-btn">
+                    !
+                </div>
+                <div class="loot-scroller hidden">
+                    <p class="looting-results"></p>
+                    <div class="trait"></div>
+                    <p class="looting-slots"></p>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <div class="adventure-wrapper button-wrapper">
+                    <div class="button-adventure button">
+                        <p>Adventure</p>
+                    </div>
+                    <div class="slider-adventure slider hidden">
+                        <p class="sliders sub-sliders-adventure"> Cave</p>
+                        <p class="sliders sub-sliders-adventure"> Meadow</p>
+                        <p class="sliders sub-sliders-adventure"> Raid</p>
+                        <p class="sliders sub-sliders-adventure"> Underwater</p>
+                    </div>
+                    <p class="cooldown-text hidden"></p>
+                </div>
+                <div class="food-wrapper button-wrapper">
+                    <div class="button-feed button">
+                        <p>Feed</p>
+                    </div>
+                    <div class="slider-food slider hidden">
+                    </div>
+                </div>
+                <div class="activities-wrapper button-wrapper">
+                    <div class="button-physical-health button">
+                        <p>Physical Health</p>
+                    </div>
+                    <div class="slider-activities slider hidden">
+                        <p class="sliders sub-sliders-activities"> Wash</p>
+                        <p class="sliders sub-sliders-activities"> Train</p>
+                        <p class="sliders sub-sliders-activities"> Rest</p>
+                        <p class="sliders sub-sliders-activities"> Meditate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tamagotchies-wrapper">
+            <div class="arthus tamagotchies">
+                <img class="warrior" src="" alt="">
+
+            </div>
+        </div>
+        <div class="all-game hidden"></div>
+        <div class="game-over-wrapper hidden">
+            <h1 class="game-over">Game Over</h1>
+            <div class="restart-btn hidden">
+                Restart ?
+            </div>
+        </div>
+</body>
+<script src="assets/js/array.js"></script>
+<script src="assets/js/buttons.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/loot.js"></script>
+
+</html>
