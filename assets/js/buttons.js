@@ -364,7 +364,7 @@ SubSliderActivities.forEach((button) => {
             LootScroller.classList.add('hidden')
         }, 1500);
         setTimeout(() => {
-            trainCDCD = false
+            trainCD = false
         }, 10000)
         function cooldownisation() {
             setTimeout(() => {
